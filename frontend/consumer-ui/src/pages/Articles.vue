@@ -1,9 +1,9 @@
 <template>
   <Layout>
     <h1>Articles</h1>
-    <div v-if="$page.hasura.article.length">
-	    <div class="articles" v-for="article in $page.hasura.article" :key="article.id">
-	      <p>{{ article.title }} by {{ article.author.name }}</p>
+    <div v-if="$page.hasura.productvariants.length">
+	    <div class="articles" v-for="variant in $page.hasura.productvariants" :key="variant.id">
+	      <p>{{ variant.name }}</p>
 	    </div>
     </div>
     <div v-else>
@@ -15,12 +15,9 @@
 <page-query>
 query {
   hasura {
-    article {
+    productvariants {
       id
-      title
-      author {
-      	name
-  	  }
+      name
     }
   }
 }

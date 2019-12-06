@@ -21,6 +21,7 @@ However, `saleor` is written in python and builds up its graphql API with graphe
 * Testing Vue.js applications in our google drive
 * [Get started with storybook](https://medium.com/@mtiller/testing-react-components-using-storybook-and-cypress-1689a27f55aa)
 * [Storybook for Vue](https://storybook.js.org/docs/guides/guide-vue/)
+* [Storybook and Cypress](https://medium.com/@mtiller/testing-react-components-using-storybook-and-cypress-1689a27f55aa)
 
 # Development setup
 

@@ -3,9 +3,9 @@
 
     <h1>Authors</h1>
 
-    <div v-if="$page.hasura.author.length">
-      <div class="author" v-for="author in $page.hasura.author" :key="author.id">
-        <p>{{ author.name }}</p>
+    <div v-if="$page.hasura.shops.length">
+      <div class="author" v-for="shop in $page.hasura.shops" :key="shop.id">
+        <p>{{ shop.name }}</p>
       </div>
     </div>
     <div v-else>
@@ -18,7 +18,7 @@
 <page-query>
 query {
   hasura {
-    author {
+    shops {
       id
       name
     }
