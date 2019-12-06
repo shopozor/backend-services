@@ -39,5 +39,6 @@
     "test:unit:ui": "majestic --port 4001",
     "test:unit:watch": "jest --watch",
     "test:unit:watchAll": "jest --watchAll"
-  }
+  },
+  "version": "0.0.1"
 }
