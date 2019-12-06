@@ -75,4 +75,4 @@ bower_components
 build/Release
 
 # gridsome
-src/.temp
+.temp
