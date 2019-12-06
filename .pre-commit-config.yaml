@@ -20,6 +20,6 @@
   hooks:
     - id: eslint
       name: eslint
-      entry: lerna run lint
+      entry: lerna run lint -- --fix
       language: system
       pass_filenames: false
