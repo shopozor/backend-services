@@ -18,7 +18,7 @@
 <page-query>
 query {
   hasura {
-    author {
+    shops {
       id
       name
     }
