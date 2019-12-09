@@ -11,12 +11,12 @@ module.exports = {
   },
 
   extends: [
+    'standard',
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    '@nuxtjs',
     'plugin:chai-friendly/recommended',
     'plugin:cypress/recommended',
-    'plugin:vue/essential',
+    'plugin:vue/recommended',
     'plugin:jest/recommended'
   ],
 
@@ -41,7 +41,6 @@ module.exports = {
   // add your custom rules here
   rules: {
     'no-console': 'off',
-    'nuxt/no-cjs-in-config': 'off',
     // allow async-await
     'generator-star-spacing': 'off',
     // allow paren-less arrow functions
@@ -64,6 +63,6 @@ module.exports = {
     "cucumber/no-arrow-functions": 2,
 
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   }
 }
