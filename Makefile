@@ -15,21 +15,24 @@ dev.backend.start:
 dev.backend.end:
 	@make --directory backend dev.end
 
-dev-test: down
-  # Setup
+dev-test.setup:
 	@make --directory backend build
 	@make bootstrap
 	@make --directory backend fixtures.generate
 	@make --directory backend up
-	# Backend unit tests
+
+dev-test.run-backend:
+	# Unit tests
 	@make --directory backend test.unit
-	# Backend integration tests
+	# Integration tests
 	@make --directory backend seed-database
 	@make --directory backend test.integration
 	@make --directory backend unseed-database
-	# Frontend ui tests
+
+dev-test.run-frontend:
+	# Unit tests
 	@make --directory frontend dev-test.unit
-	# Frontend integration tests
+	# Integration tests
 	@make --directory backend seed-database
 	@make --directory frontend dev-build
 	@make --directory frontend dev-test.integration
@@ -39,5 +42,7 @@ dev-test: down
 	@make --directory frontend dev-build
 	@make --directory frontend dev-test.e2e
 	@make --directory backend unseed-database
-	# Shutdown
-	@make down
+
+dev-test.all: down dev-test.setup dev-test.run-backend dev-test.run-frontend down
+dev-test.backend: down dev-test.setup dev-test.run-backend down
+dev-test.frontend: down dev-test.setup dev-test.run-frontend down
