@@ -5,7 +5,7 @@
       <h3 class="text-lg font-bold">
         {{ person.fullName }}
       </h3>
-      {{ person.descr }}
+      <span v-html="person.descr" />
     </div>
   </div>
 </template>

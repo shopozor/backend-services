@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import PersonDetails from '../PersonDetails'
 import Budzons from '../Budzons'
+import ProjectOverview from '../ProjectOverview'
 import imgLorenzo from '~assets/img/laurent.jpg'
 import imgCarlito from '~assets/img/carlos.jpg'
 
@@ -38,9 +39,19 @@ storiesOf('Budzons', module)
       components: {
         Budzons
       },
+      // TODO: load the persons from within the budzons component <-- users table
       template: '<budzons :persons="persons"/>',
       data: () => ({
         persons
       })
+    }
+  })
+  .add('Project overview', () => {
+    return {
+      components: {
+        ProjectOverview
+      },
+      // TODO: load the project data from within the project-overview component <-- site table, with overall data
+      template: '<project-overview/>'
     }
   })
