@@ -111,7 +111,10 @@ class FakeDataFactory:
             'email': self.create_email(first_name, last_name),
             'is_active': True,
             'is_staff': True,
-            'is_superuser': False
+            'is_superuser': False,
+            'first_name': first_name,
+            'last_name': last_name,
+            'description': self.__fake.description()
         }
 
     def create_reges(self, start_index, list_size=1):
@@ -129,7 +132,10 @@ class FakeDataFactory:
             'email': self.create_email(first_name, last_name),
             'is_active': True,
             'is_staff': True,
-            'is_superuser': True
+            'is_superuser': True,
+            'first_name': first_name,
+            'last_name': last_name,
+            'description': self.__fake.description()
         }
 
     def create_softozors(self, start_index, list_size=1):

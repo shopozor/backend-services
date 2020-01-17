@@ -4,9 +4,25 @@ import settings
 
 from copy import deepcopy
 
+import itertools
 import math
 import os
 import urllib.parse
+
+
+def budzon_item(user):
+    print('user = ', user)
+    return {
+        'first_name': user['first_name'],
+        'description': user['description'],
+        'id': user['id'],
+        # TODO: fetch image based on user['image_id']
+        'image': {
+            'alt': '',
+            'url': ''
+        },
+        'last_name': user['last_name']
+    }
 
 
 def shop_item(shop):
@@ -42,15 +58,19 @@ def set_page_info(query, totalCount=None):
     }
 
 
-def get_users_fixture(input_dir):
-    users_fixture = json_helpers.load(os.path.join(
-        input_dir, 'Users', 'producers.json'))['users']
-    users_fixture.extend(json_helpers.load(os.path.join(
-        input_dir, 'Users', 'managers.json'))['users'])
-    users_fixture.extend(json_helpers.load(os.path.join(
-        input_dir, 'Users', 'rex.json'))['users'])
-    users_fixture.extend(json_helpers.load(os.path.join(
-        input_dir, 'Users', 'softozor.json'))['users'])
+def get_users_fixture(input_dir, personas=tuple()):
+    users_fixture = []
+    if personas:
+        users_fixture = list(itertools.chain.from_iterable([json_helpers.load(os.path.join(input_dir, 'Users', f'{persona}.json'))['users'] for persona in personas]))
+    else:
+        users_fixture = json_helpers.load(os.path.join(
+            input_dir, 'Users', 'producers.json'))['users']
+        users_fixture.extend(json_helpers.load(os.path.join(
+            input_dir, 'Users', 'managers.json'))['users'])
+        users_fixture.extend(json_helpers.load(os.path.join(
+            input_dir, 'Users', 'rex.json'))['users'])
+        users_fixture.extend(json_helpers.load(os.path.join(
+            input_dir, 'Users', 'softozor.json'))['users'])
     return users_fixture
 
 

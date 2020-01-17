@@ -29,6 +29,25 @@ class ResponsesGenerator():
         json_helpers.dump(object, fullpath)
 
 
+class BudzonsListGenerator(ResponsesGenerator):
+
+    def __init__(self, fixtures_dir, output_dir):
+        super().__init__(fixtures_dir, os.path.join(
+            output_dir))
+        self.__BUDZONS_FIXTURE = helpers.get_users_fixture(
+            self._INPUT_DIR, ('rex', 'softozor'))
+
+    def _produce_data(self):
+        return {
+            'data': {
+                'users': [helpers.budzon_item(user) for user in self.__BUDZONS_FIXTURE]
+            }
+        }
+
+    def generate(self):
+        self._to_json(self._produce_data(), 'Budzons.json')
+
+
 class ShopListsGenerator(ResponsesGenerator):
 
     def __init__(self, fixtures_dir, output_dir):
