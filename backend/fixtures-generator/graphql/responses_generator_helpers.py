@@ -11,7 +11,6 @@ import urllib.parse
 
 
 def budzon_item(user):
-    print('user = ', user)
     return {
         'first_name': user['first_name'],
         'description': user['description'],
