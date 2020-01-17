@@ -4,7 +4,7 @@ import Budzons from '../Budzons'
 import ProjectOverview from '../ProjectOverview'
 import BudzonData from '~fixtures/Budzons'
 
-const person = BudzonData[0]
+const person = BudzonData.data.users[0]
 
 storiesOf('Budzons', module)
   .add('Person details', () => {
