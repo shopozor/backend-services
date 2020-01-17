@@ -1,22 +1,29 @@
 <template>
   <div class="bg-white p-6 md:flex md:items-center">
-    <img class="w-32 rounded-full mx-auto md:mx-0 md:w-48 md:mr-6" :src="person.img">
+    <img class="w-32 rounded-full mx-auto md:mx-0 md:w-48 md:mr-6" :src="person.image.url" :alt="person.image.alt">
     <div class="text-center md:text-justify">
       <h3 class="text-lg font-bold">
-        {{ person.fullName }}
+        <!-- TODO: use the full_name!!! https://docs.hasura.io/1.0/graphql/manual/schema/computed-fields.html -->
+        {{ person.first_name }} {{ person.last_name }}
       </h3>
-      <span v-html="person.descr" />
+      <span v-html="person.description" />
     </div>
   </div>
 </template>
 
 <script>
-import ValidatedObjectProp from '~/mixins/ValidatedObjectProp'
+// import ValidatedObjectProp from '~/mixins/ValidatedObjectProp'
 
 export default {
-  mixins: [
-    ValidatedObjectProp('person',
-      ['descr', 'fullName', 'img'])
-  ]
+  // mixins: [
+  //   ValidatedObjectProp('person',
+  //     ['description', 'full_name', 'img'])
+  // ]
+  props: {
+    person: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
