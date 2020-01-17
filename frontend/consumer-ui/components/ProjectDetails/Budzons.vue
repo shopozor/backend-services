@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="font-extrabold text-3xl text-center">
+    <h2 class="overview-title">
       Les Budzons
     </h2>
     <person-details v-for="budzon in budzons" :key="budzon.id" :person="budzon" />

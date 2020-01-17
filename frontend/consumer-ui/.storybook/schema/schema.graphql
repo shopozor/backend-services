@@ -875,6 +875,12 @@ type Mutation {
     where: shops_bool_exp!
   ): shops_mutation_response
 
+  # delete data from the table: "site"
+  delete_site(
+    # filter the rows which have to be deleted
+    where: site_bool_exp!
+  ): site_mutation_response
+
   # delete data from the table: "users"
   delete_users(
     # filter the rows which have to be deleted
@@ -1000,6 +1006,15 @@ type Mutation {
     # on conflict condition
     on_conflict: shops_on_conflict
   ): shops_mutation_response
+
+  # insert data into the table: "site"
+  insert_site(
+    # the rows to be inserted
+    objects: [site_insert_input!]!
+
+    # on conflict condition
+    on_conflict: site_on_conflict
+  ): site_mutation_response
 
   # insert data into the table: "users"
   insert_users(
@@ -1156,6 +1171,18 @@ type Mutation {
     # filter the rows which have to be updated
     where: shops_bool_exp!
   ): shops_mutation_response
+
+  # update data of the table: "site"
+  update_site(
+    # increments the integer columns with given value of the filtered values
+    _inc: site_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: site_set_input
+
+    # filter the rows which have to be updated
+    where: site_bool_exp!
+  ): site_mutation_response
 
   # update data of the table: "users"
   update_users(
@@ -3428,6 +3455,45 @@ type Query {
   # fetch data from the table: "shops" using primary key columns
   shops_by_pk(id: Int!): shops
 
+  # fetch data from the table: "site"
+  site(
+    # distinct select on columns
+    distinct_on: [site_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [site_order_by!]
+
+    # filter the rows returned
+    where: site_bool_exp
+  ): [site!]!
+
+  # fetch aggregated fields from the table: "site"
+  site_aggregate(
+    # distinct select on columns
+    distinct_on: [site_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [site_order_by!]
+
+    # filter the rows returned
+    where: site_bool_exp
+  ): site_aggregate!
+
+  # fetch data from the table: "site" using primary key columns
+  site_by_pk(id: Int!): site
+
   # fetch data from the table: "users"
   users(
     # distinct select on columns
@@ -4279,6 +4345,236 @@ input shops_variance_order_by {
   longitude: order_by
 }
 
+# columns and relationships of "site"
+type site {
+  description: String
+  id: Int!
+}
+
+# aggregated selection of "site"
+type site_aggregate {
+  aggregate: site_aggregate_fields
+  nodes: [site!]!
+}
+
+# aggregate fields of "site"
+type site_aggregate_fields {
+  avg: site_avg_fields
+  count(columns: [site_select_column!], distinct: Boolean): Int
+  max: site_max_fields
+  min: site_min_fields
+  stddev: site_stddev_fields
+  stddev_pop: site_stddev_pop_fields
+  stddev_samp: site_stddev_samp_fields
+  sum: site_sum_fields
+  var_pop: site_var_pop_fields
+  var_samp: site_var_samp_fields
+  variance: site_variance_fields
+}
+
+# order by aggregate values of table "site"
+input site_aggregate_order_by {
+  avg: site_avg_order_by
+  count: order_by
+  max: site_max_order_by
+  min: site_min_order_by
+  stddev: site_stddev_order_by
+  stddev_pop: site_stddev_pop_order_by
+  stddev_samp: site_stddev_samp_order_by
+  sum: site_sum_order_by
+  var_pop: site_var_pop_order_by
+  var_samp: site_var_samp_order_by
+  variance: site_variance_order_by
+}
+
+# input type for inserting array relation for remote table "site"
+input site_arr_rel_insert_input {
+  data: [site_insert_input!]!
+  on_conflict: site_on_conflict
+}
+
+# aggregate avg on columns
+type site_avg_fields {
+  id: Float
+}
+
+# order by avg() on columns of table "site"
+input site_avg_order_by {
+  id: order_by
+}
+
+# Boolean expression to filter rows from the table "site". All fields are combined with a logical 'AND'.
+input site_bool_exp {
+  _and: [site_bool_exp]
+  _not: site_bool_exp
+  _or: [site_bool_exp]
+  description: String_comparison_exp
+  id: Int_comparison_exp
+}
+
+# unique or primary key constraints on table "site"
+enum site_constraint {
+  # unique or primary key constraint
+  site_pkey
+}
+
+# input type for incrementing integer columne in table "site"
+input site_inc_input {
+  id: Int
+}
+
+# input type for inserting data into table "site"
+input site_insert_input {
+  description: String
+  id: Int
+}
+
+# aggregate max on columns
+type site_max_fields {
+  description: String
+  id: Int
+}
+
+# order by max() on columns of table "site"
+input site_max_order_by {
+  description: order_by
+  id: order_by
+}
+
+# aggregate min on columns
+type site_min_fields {
+  description: String
+  id: Int
+}
+
+# order by min() on columns of table "site"
+input site_min_order_by {
+  description: order_by
+  id: order_by
+}
+
+# response of any mutation on the table "site"
+type site_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [site!]!
+}
+
+# input type for inserting object relation for remote table "site"
+input site_obj_rel_insert_input {
+  data: site_insert_input!
+  on_conflict: site_on_conflict
+}
+
+# on conflict condition type for table "site"
+input site_on_conflict {
+  constraint: site_constraint!
+  update_columns: [site_update_column!]!
+  where: site_bool_exp
+}
+
+# ordering options when selecting data from "site"
+input site_order_by {
+  description: order_by
+  id: order_by
+}
+
+# select columns of table "site"
+enum site_select_column {
+  # column name
+  description
+
+  # column name
+  id
+}
+
+# input type for updating data in table "site"
+input site_set_input {
+  description: String
+  id: Int
+}
+
+# aggregate stddev on columns
+type site_stddev_fields {
+  id: Float
+}
+
+# order by stddev() on columns of table "site"
+input site_stddev_order_by {
+  id: order_by
+}
+
+# aggregate stddev_pop on columns
+type site_stddev_pop_fields {
+  id: Float
+}
+
+# order by stddev_pop() on columns of table "site"
+input site_stddev_pop_order_by {
+  id: order_by
+}
+
+# aggregate stddev_samp on columns
+type site_stddev_samp_fields {
+  id: Float
+}
+
+# order by stddev_samp() on columns of table "site"
+input site_stddev_samp_order_by {
+  id: order_by
+}
+
+# aggregate sum on columns
+type site_sum_fields {
+  id: Int
+}
+
+# order by sum() on columns of table "site"
+input site_sum_order_by {
+  id: order_by
+}
+
+# update columns of table "site"
+enum site_update_column {
+  # column name
+  description
+
+  # column name
+  id
+}
+
+# aggregate var_pop on columns
+type site_var_pop_fields {
+  id: Float
+}
+
+# order by var_pop() on columns of table "site"
+input site_var_pop_order_by {
+  id: order_by
+}
+
+# aggregate var_samp on columns
+type site_var_samp_fields {
+  id: Float
+}
+
+# order by var_samp() on columns of table "site"
+input site_var_samp_order_by {
+  id: order_by
+}
+
+# aggregate variance on columns
+type site_variance_fields {
+  id: Float
+}
+
+# order by variance() on columns of table "site"
+input site_variance_order_by {
+  id: order_by
+}
+
 scalar smallint
 
 # expression to compare columns of type smallint. All fields are combined with logical 'AND'.
@@ -4782,6 +5078,45 @@ type Subscription {
 
   # fetch data from the table: "shops" using primary key columns
   shops_by_pk(id: Int!): shops
+
+  # fetch data from the table: "site"
+  site(
+    # distinct select on columns
+    distinct_on: [site_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [site_order_by!]
+
+    # filter the rows returned
+    where: site_bool_exp
+  ): [site!]!
+
+  # fetch aggregated fields from the table: "site"
+  site_aggregate(
+    # distinct select on columns
+    distinct_on: [site_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [site_order_by!]
+
+    # filter the rows returned
+    where: site_bool_exp
+  ): site_aggregate!
+
+  # fetch data from the table: "site" using primary key columns
+  site_by_pk(id: Int!): site
 
   # fetch data from the table: "users"
   users(

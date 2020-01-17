@@ -31,7 +31,6 @@ storiesOf('Budzons', module)
       components: {
         ProjectOverview
       },
-      // TODO: load the project data from within the project-overview component <-- site table, with overall data
       template: '<project-overview/>'
     }
   })
