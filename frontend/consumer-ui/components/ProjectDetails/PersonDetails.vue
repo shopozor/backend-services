@@ -19,6 +19,7 @@ export default {
   //   ValidatedObjectProp('person',
   //     ['description', 'full_name', 'img'])
   // ]
+  // TODO: put more validation here!
   props: {
     person: {
       type: Object,
