@@ -1,5 +1,6 @@
 import ShopsData from '~fixtures/Consumer/Shops'
 import Budzons from '~fixtures/Budzons'
+import ProjectOverview from '~fixtures/ProjectOverview'
 
 export default {
   Query: () => {
@@ -7,27 +8,13 @@ export default {
       shops: () => {
         return ShopsData.data.shops
       },
-      // TODO: are there arguments we can use here? maybe that'd be a way to have story-specific mocks
+      // the first argument available here is in the () [if we provided some] is the query name
+      // the second argument is the where clauses and stuff
       users: () => {
         return Budzons.data.users
       },
-      // TODO: get site data (like description --> project overview)
       sites: () => {
-        return [{
-          description: `
-          <p class="mb-5">Nous prétendons que le produit artisanal que nous sommes en train de réaliser, "La Budzonnerie", rendra le commerce de proximité
-          attractif par ses aspects local, transparent et ludique. La Budzonnerie alliera la stimulation de l’économie locale à la simplification de
-          la vie de nos agriculteurs et artisans. Tout cela transparaît dans le nom "Budzonnerie": en effet, ce terme est une extension du patois "Budzon"
-          qui signifie "fourmi rouge". En particulier, un "Budzon" est une fourmi qui bouge beaucoup.</p>
-
-          <p class="mb-5">Une Budzonnerie est un groupe de Producteurs actifs dans une région donnée dont le rayon ne dépassera généralement pas
-          25 kilomètres. Ceux-ci proposeront une certaine palette de produits de la région, comme par exemple de la confiture, du
-          nutella maison, des légumes, de la viande, du fromage, des gâteaux, du savon ou des produits de nettoyage. Ils se réuniront tous
-          régulièrement dans un endroit donné où ils mettront à disposition les produits qui leur auront été commandés. Les
-          Consommateurs pourront commander des produits à une Budzonnerie au travers de la présente plateforme qui rassemblera les produits de tous
-          ses producteurs. Nous proposerons divers moyens de paiement typiquement suisses.</p>
-          `
-        }]
+        return ProjectOverview.data.sites
       }
     }
   }
