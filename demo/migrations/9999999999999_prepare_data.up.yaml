@@ -1,0 +1,3 @@
+- args:
+    sql: INSERT INTO public.users (is_superuser,is_active,is_staff,description,email,first_name,last_name) VALUES ('False','True','True','Portugais Fribourgeois, je suis papa de deux enfants et un mari dévoué à sa famille ainsi qu''à la cause environnementale. Je me suis engagé dans ce projet dans l''optique de simplifier la transition de nos foyers vers une consommation plus écologique. Avec une interface qui sera agréable, autant sur le terrain que sur le web, la Budzonnerie permettra aux Consommateurs d''acheter des Produits locaux et respectueux de l''environnement tout en aidant le tissu économique local à se développer. Et ça, c''est mon engagement!','carlos.rosa@budzonnerie.ch','Carlos','Rosa');
+  type: run_sql
