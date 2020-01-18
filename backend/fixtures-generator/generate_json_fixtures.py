@@ -140,6 +140,9 @@ def generate_variant(variant_name, output_folder):
     margin_defns = factory.create_margindefns()
     shopozor.update(margin_defns)
 
+    sites = factory.create_sites()
+    shopozor.update(sites)
+
     json_helpers.dump(shopozor, os.path.join(
         output_folder, 'Shopozor.json'), sort_keys=False)
 
