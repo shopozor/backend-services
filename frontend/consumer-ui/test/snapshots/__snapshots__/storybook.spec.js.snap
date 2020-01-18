@@ -4,65 +4,13 @@ exports[`Storyshots Budzons Budzons 1`] = `
 <div>
   <div>
     <h2
-      class="font-extrabold text-3xl text-center"
+      class="overview-title"
     >
       
     Les Budzons
   
     </h2>
      
-    <div
-      class="bg-white p-6 md:flex md:items-center"
-    >
-      <img
-        class="w-32 rounded-full mx-auto md:mx-0 md:w-48 md:mr-6"
-        src="[object Object]"
-      />
-       
-      <div
-        class="text-center md:text-justify"
-      >
-        <h3
-          class="text-lg font-bold"
-        >
-          
-      Lorenzo Miguel
-    
-        </h3>
-         
-        <span>
-          
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nulla tortor, luctus vel ante ac, tincidunt tempor lacus. Vivamus vestibulum mattis rutrum. Praesent dignissim neque sit amet rhoncus iaculis. Proin quis interdum arcu. Morbi placerat ornare placerat. Nullam consequat porttitor nisl et fringilla. Nulla ut lorem cursus, commodo justo non, tincidunt elit. Integer euismod dui arcu, at accumsan tellus ornare ultrices. Praesent aliquam elit non ligula congue, sit amet mollis massa aliquam. Maecenas felis nisl, dignissim id commodo et, suscipit vitae diam. Nam dignissim, nibh eget egestas laoreet, urna leo facilisis quam, eget malesuada massa arcu et purus. Nunc eget dolor vitae eros rhoncus imperdiet.
-    
-        </span>
-      </div>
-    </div>
-    <div
-      class="bg-white p-6 md:flex md:items-center"
-    >
-      <img
-        class="w-32 rounded-full mx-auto md:mx-0 md:w-48 md:mr-6"
-        src="[object Object]"
-      />
-       
-      <div
-        class="text-center md:text-justify"
-      >
-        <h3
-          class="text-lg font-bold"
-        >
-          
-      Carlito Neves
-    
-        </h3>
-         
-        <span>
-          
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacinia at quis risus sed vulputate odio ut enim blandit. Potenti nullam ac tortor vitae. Quis vel eros donec ac odio tempor orci. Praesent elementum facilisis leo vel fringilla est ullamcorper. Erat imperdiet sed euismod nisi porta lorem mollis aliquam ut. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Sit amet venenatis urna cursus eget nunc scelerisque viverra mauris. Congue mauris rhoncus aenean vel elit. Odio morbi quis commodo odio. Sem viverra aliquet eget sit amet tellus cras. In fermentum et sollicitudin ac orci phasellus egestas. Tristique nulla aliquet enim tortor at auctor urna nunc. Turpis tincidunt id aliquet risus feugiat in ante metus.
-    
-        </span>
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -73,8 +21,9 @@ exports[`Storyshots Budzons Person details 1`] = `
     class="bg-white p-6 md:flex md:items-center"
   >
     <img
+      alt=""
       class="w-32 rounded-full mx-auto md:mx-0 md:w-48 md:mr-6"
-      src="[object Object]"
+      src=""
     />
      
     <div
@@ -84,14 +33,13 @@ exports[`Storyshots Budzons Person details 1`] = `
         class="text-lg font-bold"
       >
         
-      Lorenzo Miguel
+      Stéphane Deladoëy
     
       </h3>
        
       <span>
-        
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nulla tortor, luctus vel ante ac, tincidunt tempor lacus. Vivamus vestibulum mattis rutrum. Praesent dignissim neque sit amet rhoncus iaculis. Proin quis interdum arcu. Morbi placerat ornare placerat. Nullam consequat porttitor nisl et fringilla. Nulla ut lorem cursus, commodo justo non, tincidunt elit. Integer euismod dui arcu, at accumsan tellus ornare ultrices. Praesent aliquam elit non ligula congue, sit amet mollis massa aliquam. Maecenas felis nisl, dignissim id commodo et, suscipit vitae diam. Nam dignissim, nibh eget egestas laoreet, urna leo facilisis quam, eget malesuada massa arcu et purus. Nunc eget dolor vitae eros rhoncus imperdiet.
-    
+        Nihil suscipit laboriosam. Minima neque quisquam eligendi recusandae reprehenderit tempore.
+Molestiae tenetur ipsa voluptatum quo.
       </span>
     </div>
   </div>
@@ -102,7 +50,7 @@ exports[`Storyshots Budzons Project overview 1`] = `
 <div>
   <div>
     <h2
-      class="font-extrabold text-3xl text-center"
+      class="overview-title"
     >
       
     Le concept
@@ -112,33 +60,7 @@ exports[`Storyshots Budzons Project overview 1`] = `
     <div
       class="p-6 text-justify"
     >
-      <span>
-        
-      
-        <p
-          class="mb-5"
-        >
-          Nous prétendons que le produit artisanal que nous sommes en train de réaliser, "La Budzonnerie", rendra le commerce de proximité
-      attractif par ses aspects local, transparent et ludique. La Budzonnerie alliera la stimulation de l’économie locale à la simplification de
-      la vie de nos agriculteurs et artisans. Tout cela transparaît dans le nom "Budzonnerie": en effet, ce terme est une extension du patois "Budzon"
-      qui signifie "fourmi rouge". En particulier, un "Budzon" est une fourmi qui bouge beaucoup.
-        </p>
-        
-
-      
-        <p
-          class="mb-5"
-        >
-          Une Budzonnerie est un groupe de Producteurs actifs dans une région donnée dont le rayon ne dépassera généralement pas
-      25 kilomètres. Ceux-ci proposeront une certaine palette de produits de la région, comme par exemple de la confiture, du
-      nutella maison, des légumes, de la viande, du fromage, des gâteaux, du savon ou des produits de nettoyage. Ils se réuniront tous
-      régulièrement dans un endroit donné où ils mettront à disposition les produits qui leur auront été commandés. Les
-      Consommateurs pourront commander des produits à une Budzonnerie au travers de la présente plateforme qui rassemblera les produits de tous
-      ses producteurs. Nous proposerons divers moyens de paiement typiquement suisses.
-        </p>
-        
-    
-      </span>
+      <span />
     </div>
   </div>
 </div>
@@ -185,7 +107,7 @@ exports[`Storyshots Map Shop description 1`] = `
           class="text-black font-bold text-xl mb-2"
         >
           
-        Amet minus nulla.
+        Eaque excepturi odit nam laborum perspiciatis.
       
         </div>
          
@@ -193,7 +115,7 @@ exports[`Storyshots Map Shop description 1`] = `
           class="text-grey-darker text-base"
         >
           
-        Ipsum sit veniam. Iure repudiandae iure dolorem enim voluptas. Perspiciatis dolores sequi sint.
+        Eum nesciunt iure esse similique officiis eos. Corporis corrupti aperiam veritatis necessitatibus non expedita.
       
         </p>
       </div>
@@ -211,7 +133,7 @@ exports[`Storyshots Map Shop description 1`] = `
           class="text-sm italic"
         >
           
-        46.807378, 6.997913
+        46.763084, 7.072264
       
         </div>
       </div>
