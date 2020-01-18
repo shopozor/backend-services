@@ -12,7 +12,7 @@ export default {
         return Budzons.data.users
       },
       // TODO: get site data (like description --> project overview)
-      site: () => {
+      sites: () => {
         return [{
           description: `
           <p class="mb-5">Nous prétendons que le produit artisanal que nous sommes en train de réaliser, "La Budzonnerie", rendra le commerce de proximité

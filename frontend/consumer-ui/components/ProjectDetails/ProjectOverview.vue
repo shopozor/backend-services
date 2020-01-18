@@ -1,8 +1,7 @@
 <template>
   <div>
-    <!-- TODO: extract this css out because it's used in other places -->
     <h2 class="overview-title">
-      <!-- <h2 class="font-extrabold text-3xl text-center"> -->
+      <!-- TODO: this text should come from i18n! -->
       Le concept
     </h2>
     <div class="p-6 text-justify">
@@ -16,13 +15,13 @@ import overview from '~graphql/projectOverview'
 
 export default {
   apollo: {
-    site: {
+    sites: {
       query: overview
     }
   },
   computed: {
     description () {
-      return this.site ? this.site[0].description : ''
+      return this.sites ? this.sites[0].description : ''
     }
   }
 }
