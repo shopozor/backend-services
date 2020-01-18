@@ -1,8 +1,7 @@
 <template>
   <div>
     <h2 class="overview-title">
-      <!-- TODO: this text should come from i18n! -->
-      Le concept
+      {{ $t('concept') }}
     </h2>
     <div class="p-6 text-justify">
       <span v-html="description" />

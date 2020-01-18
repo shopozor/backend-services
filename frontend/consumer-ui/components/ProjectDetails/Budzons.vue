@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="overview-title">
-      Les Budzons
+      {{ $t('budzons') }}
     </h2>
     <person-details v-for="budzon in budzons" :key="budzon.id" :person="budzon" />
   </div>
