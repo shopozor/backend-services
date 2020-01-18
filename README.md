@@ -184,6 +184,7 @@ or
 yarn storybook --scope consumer-ui
 yarn storybook --scope admin-ui
 ```
+Not only is storybook nice to develop components isolately, it's aslo providing us with out-of-the-box snapshot testing of each of those components. It can be that we have e.g. very simple components like a header or a footer with almost no logic. That component's snapshot will, however, be tested.
 
 ### Testing
 
