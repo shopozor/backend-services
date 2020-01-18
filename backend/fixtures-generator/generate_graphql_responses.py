@@ -1,4 +1,4 @@
-from graphql.responses_generator import BudzonsListGenerator, ShopCategoriesGenerator, ShopListsGenerator, ProductListsGenerator
+from graphql.responses_generator import *
 
 import argparse
 
@@ -15,6 +15,9 @@ def generate_responses_for_fixture_set(output_folder, fixtures_folder):
     generator.generate()
 
     generator = ProductListsGenerator(fixtures_folder, output_folder)
+    generator.generate()
+
+    generator = ProjectOverviewGenerator(fixtures_folder, output_folder)
     generator.generate()
 
 

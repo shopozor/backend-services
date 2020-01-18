@@ -48,6 +48,24 @@ class BudzonsListGenerator(ResponsesGenerator):
         self._to_json(self._produce_data(), 'Budzons.json')
 
 
+class ProjectOverviewGenerator(ResponsesGenerator):
+
+    def __init__(self, fixtures_dir, output_dir):
+        super().__init__(fixtures_dir, os.path.join(
+            output_dir))
+        self.__SHOPS_FIXTURE = helpers.get_shopozor_fixture(self._INPUT_DIR)
+
+    def _produce_data(self):
+        return {
+            'data': {
+                'sites': [helpers.site_item(site) for site in self.__SHOPS_FIXTURE['sites']]
+            }
+        }
+
+    def generate(self):
+        self._to_json(self._produce_data(), 'ProjectOverview.json')
+
+
 class ShopListsGenerator(ResponsesGenerator):
 
     def __init__(self, fixtures_dir, output_dir):

@@ -24,6 +24,12 @@ def budzon_item(user):
     }
 
 
+def site_item(site):
+    return {
+        'description': site['description'],
+    }
+
+
 def shop_item(shop):
     return {
         'id': shop['id'],
