@@ -65,6 +65,25 @@ Most of the backend stuff and the whole frontend validation are performed on doc
 * on Ubuntu, follow [these instructions](https://docs.docker.com/install/linux/docker-ce/ubuntu/)  
 * on Windows 10, follow [these instructions](https://docs.docker.com/docker-for-windows/install/) and make sure you read [this blog](https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly) if you work with WSL
 
+### Common third-party packages
+
+In order to play with the assets, you will probably need the [minio client](https://docs.min.io/docs/minio-client-quickstart-guide.html). Under Windows 10,
+
+1. download the [client](https://dl.min.io/client/mc/release/windows-amd64/mc.exe)
+2. run
+```
+export MINIO_ACCESS_KEY=minio
+export MINIO_SECRET_KEY=minio123
+export MINIO_PORT=9001
+mc config host add minio http://localhost:${MINIO_PORT} ${MINIO_ACCESS_KEY} ${MINIO_SECRET_KEY}
+```
+Compare with the data set up in the `docker-compose-backend.yaml`. The `MINIO_ACCESS_KEY`, `MINIO_SECRET_KEY`, and the `MINIO_PORT` might be different in your local setup. Some more information here on how to use [min.io](https://min.io) in our frontend applications:
+
+* [minio js store app](https://github.com/minio/minio-js-store-app)
+* [Get permanent URL for object](https://github.com/minio/minio-js/issues/588)
+* [Javascript Client API reference](https://docs.min.io/docs/javascript-client-api-reference.html)
+* [minio client quickstart guide](https://docs.min.io/docs/minio-client-quickstart-guide.html)
+
 ## Backend development setup
 
 ### Necessary third-party packages
