@@ -13,4 +13,5 @@ do
 done
 
 mc mb ${MINIO_ALIAS}/users
-mc policy set public ${MINIO_ALIAS}/users
+# TODO: reactivate when we serve the assets over http!
+# mc policy set public ${MINIO_ALIAS}/users
