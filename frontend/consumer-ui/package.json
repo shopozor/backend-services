@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc2.3",
+    "@nuxtjs/tailwindcss": "^1.2.0",
     "apollo-cache-inmemory": "^1.6.5",
     "core-js": "^2.6.5",
     "cross-env": "^6.0.3",
@@ -20,6 +21,9 @@
     "vue2-leaflet": "^2.4.1"
   },
   "description": "Shopozor consumer ui",
+  "devDependencies": {
+    "nuxt-purgecss": "^0.2.1"
+  },
   "jest-junit": {
     "outputDirectory": "./test-reports",
     "outputName": "unit-test-report.xml"

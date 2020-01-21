@@ -8056,6 +8056,7 @@ constants-browserify@^1.0.0, constants-browserify@~1.0.0:
   version "0.0.0"
   dependencies:
     "@nuxtjs/apollo" "^4.0.0-rc2.3"
+    "@nuxtjs/tailwindcss" "^1.2.0"
     apollo-cache-inmemory "^1.6.5"
     core-js "^2.6.5"
     cross-env "^6.0.3"
