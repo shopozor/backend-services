@@ -1,7 +1,9 @@
 - args:
     sql: >
+      INSERT INTO public.images (url, alt) VALUES ('users/carlos.jpg', 'Carlos Rosa');
+      WITH imageid AS (SELECT id FROM public.images WHERE url = 'users/carlos.jpg')
       INSERT INTO public.users
-        (is_superuser,is_active,is_staff,description,email,first_name,last_name)
+        (is_superuser,is_active,is_staff,description,email,first_name,last_name,image_id)
       VALUES (
         'False',
         'True',
@@ -12,13 +14,16 @@
          tout en aidant le tissu économique local à se développer. Et ça, c''est mon engagement!',
         'carlos.rosa@budzonnerie.ch',
         'Carlos',
-        'Rosa'
+        'Rosa',
+        (SELECT id FROM imageid)
       );
   type: run_sql
 - args:
     sql: >
+      INSERT INTO public.images (url, alt) VALUES ('users/remi.jpg', 'Rémi Grandjean');
+      WITH imageid AS (SELECT id FROM public.images WHERE url = 'users/remi.jpg')
       INSERT INTO public.users
-        (is_superuser,is_active,is_staff,description,email,first_name,last_name)
+        (is_superuser,is_active,is_staff,description,email,first_name,last_name,image_id)
       VALUES (
         'False',
         'True',
@@ -30,13 +35,16 @@
          les Producteurs produisent seulement ce qui a été vendu, ce qui leur permet de réduire le gaspillage de leurs Produits.',
         'remi.grandjean@budzonnerie.ch',
         'Rémi',
-        'Grandjean'
+        'Grandjean',
+        (SELECT id FROM imageid)
       );
   type: run_sql
 - args:
     sql: >
+      INSERT INTO public.images (url, alt) VALUES ('users/laurent.jpg', 'Laurent Michel');
+      WITH imageid AS (SELECT id FROM public.images WHERE url = 'users/laurent.jpg')
       INSERT INTO public.users
-        (is_superuser,is_active,is_staff,description,email,first_name,last_name)
+        (is_superuser,is_active,is_staff,description,email,first_name,last_name,image_id)
       VALUES (
         'False',
         'True',
@@ -47,7 +55,8 @@
          sa contribution artisanale pour sa région.',
         'laurent.michel@softozor.ch',
         'Laurent',
-        'Michel'
+        'Michel',
+        (SELECT id FROM imageid)
       );
   type: run_sql
 - args:
