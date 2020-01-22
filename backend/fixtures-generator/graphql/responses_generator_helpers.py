@@ -66,7 +66,8 @@ def set_page_info(query, totalCount=None):
 def get_users_fixture(input_dir, personas=tuple()):
     users_fixture = []
     if personas:
-        users_fixture = list(itertools.chain.from_iterable([json_helpers.load(os.path.join(input_dir, 'Users', f'{persona}.json'))['users'] for persona in personas]))
+        users_fixture = list(itertools.chain.from_iterable([json_helpers.load(os.path.join(
+            input_dir, 'Users', f'{persona}.json'))['users'] for persona in personas]))
     else:
         users_fixture = json_helpers.load(os.path.join(
             input_dir, 'Users', 'producers.json'))['users']

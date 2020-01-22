@@ -159,7 +159,7 @@ make fixtures
 
 ### Necessary third-party packages
 
-You will need to have `yarn` and `nodejs` installed:
+You will need to have `yarn` and `nodejs` installed. Under WSL or Linux, you can run the following commands (or you can also follow [this advice](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)):
 ```bash
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -167,6 +167,8 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 apt update
 apt install -y yarn nodejs
 ```
+If you're not using WSL because `yarn` is still buggy there, you should then [install nodejs](https://nodejs.org/) and [install yarn](https://yarnpkg.com/en/docs/install#windows-stable).
+
 In addition, install [lerna](https://lerna.js.org/) globally
 ```bash
 yarn global add lerna

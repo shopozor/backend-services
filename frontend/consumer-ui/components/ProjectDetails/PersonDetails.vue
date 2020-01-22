@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white p-6 md:flex md:items-center">
-    <img class="w-32 rounded-full mx-auto md:mx-0 md:w-48 md:mr-6" :src="person.image.url" :alt="person.image.alt">
+    <img class="w-32 rounded-full mx-auto md:mx-0 md:w-48 md:mr-6" :src="imageUrl" :alt="person.image.alt">
     <div class="text-center md:text-justify">
       <h3 class="text-lg font-bold">
         <!-- TODO: use the full_name!!! https://docs.hasura.io/1.0/graphql/manual/schema/computed-fields.html -->
@@ -13,6 +13,7 @@
 
 <script>
 // import ValidatedObjectProp from '~/mixins/ValidatedObjectProp'
+import urljoin from 'url-join'
 
 export default {
   // mixins: [
@@ -24,6 +25,11 @@ export default {
     person: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    imageUrl () {
+      return urljoin(process.env.ASSETS_API, this.person.image.url)
     }
   }
 }
