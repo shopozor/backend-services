@@ -1,7 +1,7 @@
 - args:
     sql: >
-      INSERT INTO public.images (url, alt) VALUES ('users/carlos.jpg', 'Carlos Rosa');
-      WITH imageid AS (SELECT id FROM public.images WHERE url = 'users/carlos.jpg')
+      INSERT INTO public.images (url, alt) VALUES ('people/carlos.jpg', 'Carlos Rosa');
+      WITH imageid AS (SELECT id FROM public.images WHERE url = 'people/carlos.jpg')
       INSERT INTO public.users
         (is_superuser,is_active,is_staff,description,email,first_name,last_name,image_id)
       VALUES (
@@ -20,8 +20,8 @@
   type: run_sql
 - args:
     sql: >
-      INSERT INTO public.images (url, alt) VALUES ('users/remi.jpg', 'Rémi Grandjean');
-      WITH imageid AS (SELECT id FROM public.images WHERE url = 'users/remi.jpg')
+      INSERT INTO public.images (url, alt) VALUES ('people/remi.jpg', 'Rémi Grandjean');
+      WITH imageid AS (SELECT id FROM public.images WHERE url = 'people/remi.jpg')
       INSERT INTO public.users
         (is_superuser,is_active,is_staff,description,email,first_name,last_name,image_id)
       VALUES (
@@ -41,8 +41,8 @@
   type: run_sql
 - args:
     sql: >
-      INSERT INTO public.images (url, alt) VALUES ('users/laurent.jpg', 'Laurent Michel');
-      WITH imageid AS (SELECT id FROM public.images WHERE url = 'users/laurent.jpg')
+      INSERT INTO public.images (url, alt) VALUES ('people/laurent.jpg', 'Laurent Michel');
+      WITH imageid AS (SELECT id FROM public.images WHERE url = 'people/laurent.jpg')
       INSERT INTO public.users
         (is_superuser,is_active,is_staff,description,email,first_name,last_name,image_id)
       VALUES (

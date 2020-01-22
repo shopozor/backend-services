@@ -12,5 +12,5 @@ do
     [ "$?" == "0" ] && break || sleep 1
 done
 
-mc mb ${MINIO_ALIAS}/users
-mc policy set public ${MINIO_ALIAS}/users
+mc mb ${MINIO_ALIAS}/people
+mc policy set public ${MINIO_ALIAS}/people
